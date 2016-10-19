@@ -1,0 +1,261 @@
+<html>
+
+<head>
+  <title >24*7 LifE CarE BlooD BanK-Donar registration</title>
+		 <link rel="icon" href="http://icons.iconarchive.com/icons/klukeart/medical/128/blood-icon.png" ">
+ 
+ 
+  
+</head>
+<style>
+div {
+
+    margin-top: 10px;
+    margin-bottom: 8px;
+    margin-right: 150px;
+    margin-left: 80px;
+  
+}
+
+
+p.mj{
+border-style: dotted;
+     
+    margin-top: 10px;
+    margin-bottom: 8px;
+    margin-right: 200px;
+    margin-left: 200px;
+    background-color: white;
+}
+
+</style>
+<style>
+div.ex1 {
+    direction: rtl;
+}
+
+
+body {
+    
+ background-image: url(https://mir-s3-cdn-cf.behance.net/projects/202/21811779.548020096ea7e.jpg), url();
+    background-position: right bottom, left top;
+    background-repeat: no-repeat, repeat;
+    padding: 15px;
+}
+
+
+h1 {
+text-shadow: 0 0 30px #FF0000, 0 0 30px #0000FF;
+    color: yellow;
+letter-spacing: 6px;
+  font-style: italic;
+}
+h2 {
+letter-spacing: 3px;
+    text-decoration: line-through;
+}
+</style>
+</head>
+<style>
+.center {
+   
+    text-align: center;
+}
+</style>
+
+<script>
+ Donor=[
+{
+id:100,
+name:"Anu",
+Address:"Coimbatore",
+Mobile:9876543210
+},
+{
+id:200,
+name:"Aishu",
+Address:"Chennai",
+Mobile:9876598765
+},
+{
+id:300,
+name:"Benny",
+Address:"Tirupur",
+Mobile:9753124680
+},
+{
+id:400,
+name:"Manoj",
+Address:"Trichy",
+Mobile:9988776655
+},
+{
+id:500,
+name:"Reshma",
+Address:"Madhurai",
+Mobile:9900881144
+}
+];
+
+</script>
+
+<h1>Just Click Anywhere,Say GoodBye </h1><h2><pa>To Button!!</pa></h2>
+
+
+
+
+
+
+<head>
+<style>
+myDIV {
+    width: 500px;
+    height: 500px;
+    background-color: white;
+}
+</style>
+</head>
+<body>
+
+
+
+<button onclick="myFunction()">Click Me To Reveal The Secret </button>
+
+<div id="myDIV">
+<div class="ex1"><p>This page is divided into four quadrants,or sections,based on those values.<br> The first quadrant is the upper left-hand corner of the graph which represent first  Donor details,the section where both x and y are positive.
+<br> The second quadrant,the upper right-hand corner represent details of the next  Donor,which includes negative values of x and positive values of y.
+<br> The third quadrant, the lower left-hand corner, includes negative values of both x and y which represent previous  Donor details. 
+<br>Finally, the fourth quadrant, the lower right-hand corner, includes positive values of x and negative values of y,which represent last  Donor details.</p>
+</p></div>
+</div>
+
+
+
+<script>
+function myFunction() {
+    var x = document.getElementById('myDIV');
+    if (x.style.visibility === 'hidden') {
+        x.style.visibility = 'visible';
+    } else {
+        x.style.visibility = 'hidden';
+    }
+}
+</script>
+
+</body>
+
+
+
+
+
+
+
+<div class="center"><p class="mj">
+ Donor Register No:<input type="text" id="eid" value="id "><br><br>
+ Donor name:<input type="text" id="ename" value=name><br><br>
+ Donor Address:<input type="text" id="eaddr" value=Address><br><br>
+ Donor Mobile Number:<input type="text" id="eno" value=empMobile><br><br><br>
+</p></div>
+
+<script>
+  var height = 0;
+    var width = 0;
+ 
+    function getWindowSize() {
+      height = window.innerHeight;
+      width = window.innerWidth;
+      return {height: height,width:width};
+    }
+ 
+    function getClickCoordinates() {
+      var x = event.clientX;     // Get the horizontal coordinate
+      var y = event.clientY;     // Get the vertical coordinate
+      checkCoOrdinatePosition(height,width,x,y);
+    }
+ 
+    function checkCoOrdinatePosition(height,width,xOrdinate,yOrdinate){
+       if(.5 * width >= xOrdinate && .5 * height >=yOrdinate){
+          console.log("First Quadrant");
+first();
+       }
+       else if(.5 * width <= xOrdinate && .5 * height >=yOrdinate){
+           console.log("Second Quadrant");
+next();
+       }
+       else if(.5 * width >= xOrdinate && .5 * height <=yOrdinate){
+           console.log("third Quadrant");
+previous();
+       }
+       else{
+           console.log("Fourth Quadrant");
+last();
+       }
+     }
+ 
+    getWindowSize();
+ 
+    window.addEventListener("click",function () {
+      getClickCoordinates();
+    })
+ 
+    window.addEventListener("resize",function () {
+      getWindowSize();
+    })
+var index;
+function first()
+{
+document.getElementById("eid").value= Donor[0].id;
+document.getElementById("ename").value= Donor[0].name;
+document.getElementById("eaddr").value= Donor[0].Address;
+document.getElementById("eno").value= Donor[0].Mobile;
+}
+function last()
+{
+document.getElementById("eid").value= Donor[ Donor.length-1].id;
+document.getElementById("ename").value= Donor[ Donor.length-1].name;
+document.getElementById("eaddr").value= Donor[ Donor.length-1].Address;
+document.getElementById("eno").value= Donor[ Donor.length-1].Mobile;
+}
+function arrindex()
+{
+var ele=document.getElementById("eid").value;
+for(var i=0;i< Donor.length;i++)
+{
+if(ele== Donor[i].id)
+{
+index=i;
+}
+}
+}
+function previous()
+{
+arrindex();
+if(index==0)
+{
+alert("It is the first record");
+}
+else
+{
+document.getElementById("eid").value= Donor[index-1].id;
+document.getElementById("ename").value= Donor[index-1].name;
+document.getElementById("eaddr").value= Donor[index-1].Address;
+document.getElementById("eno").value= Donor[index-1].Mobile;
+}
+}
+function next()
+{
+arrindex();
+if(index== Donor.length-1)
+{
+alert("It is the last record");
+}
+else
+{
+document.getElementById("eid").value= Donor[index+1].id;
+document.getElementById("ename").value= Donor[index+1].name;
+document.getElementById("eaddr").value= Donor[index+1].Address;
+document.getElementById("eno").value= Donor[index+1].Mobile;
+}
+}  
+</script>
+</html>
